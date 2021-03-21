@@ -8,20 +8,27 @@ public class BoardSpaces : MonoBehaviour
     [SerializeField]
     int x, y;
 
+    BoardManager _boardManager;
+    GamePieceManager _gamePieceManager;
+
+    private void Start()
+    {
+       var _gameManager = GameManager.Instance;
+        _boardManager = _gameManager.GetComponent<BoardManager>();
+        _gamePieceManager = _gameManager.GetComponent<GamePieceManager>();
+    }
+
     private void OnMouseOver()
     {
-        var gameManager = GameManager.Instance;
-        gameManager.OutlineBoardSpaceOnEnter(gameObject);
+        _boardManager.OutlineBoardSpaceOnEnter(gameObject);
     }
     private void OnMouseExit()
     {
-        var gameManager = GameManager.Instance;
-        gameManager.OutlineBoardSpaceOnExit(gameObject);
+        _boardManager.OutlineBoardSpaceOnExit(gameObject);
     }
 
     private void OnMouseDown()
     {
-        var gameManager = GameManager.Instance;
-        gameManager.MovePiece(gameObject);
+        _gamePieceManager.MovePiece(gameObject);
     }
 }
