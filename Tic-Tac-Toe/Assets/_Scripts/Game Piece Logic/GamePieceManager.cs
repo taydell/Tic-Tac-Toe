@@ -6,10 +6,11 @@ public class GamePieceManager : MonoBehaviour
 {
     List<GameObject> _selectedPieces = new List<GameObject>();
     BoardManager _boardManager;
+    GameManager _gameManager;
 
     private void Start()
     {
-        var _gameManager = GameManager.Instance;
+        _gameManager = GameManager.Instance;
         _boardManager = _gameManager.GetComponent<BoardManager>();
     }
 
@@ -59,6 +60,10 @@ public class GamePieceManager : MonoBehaviour
                 OutlinePiece(_selectedPieces[0]);
 
                 _boardManager.AddGamePieceToGameBoard(boardSpaceRow, boardSpaceColumn, gamePiece);
+                if(_boardManager.IsGameOver(gamePiece.GetPlayer()))
+                {
+                    _gameManager.EndGame(gamePiece.GetPlayer());
+                }
 
                 _boardManager.OutlineBoardSpaceOnExit(boardSpace);
             }

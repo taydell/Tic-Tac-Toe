@@ -5,12 +5,15 @@ using UnityEngine;
 public class BoardManager : MonoBehaviour
 {
     GamePieceManager _gamePieceManager;
+    WinConditions _winConditions;
+    GameManager _gameManager;
     GamePiece[,] _gameBoard = new GamePiece[3,3];
 
     private void Start()
     {
-        var _gameManager = GameManager.Instance;
+        _gameManager = GameManager.Instance;
         _gamePieceManager = _gameManager.GetComponent<GamePieceManager>();
+        _winConditions = _gameManager.GetComponent<WinConditions>();
     }
 
     public void OutlineBoardSpaceOnEnter(GameObject selectedSpace, int row, int column)
@@ -44,6 +47,42 @@ public class BoardManager : MonoBehaviour
     public GamePiece GetGamePieceAtSpecificBoardSpace(int row, int column)
     {
         return _gameBoard[row,column];
+    }
+
+    public PlayerEnum? GetPlayerFromGameBoardPosition(int row, int column)
+    {
+        if (_gameBoard[row, column] == null)
+            return null;
+
+        return _gameBoard[row, column].GetPlayer();
+    }
+
+    public bool IsGameOver(PlayerEnum player)
+    { 
+        if (_winConditions.WinConditionForTopRow(player))
+            return true;
+        if (_winConditions.WinConditionForMiddleRow(player))
+            return true;
+        if (_winConditions.WinConditionForBottomRow(player))
+            return true;
+        if (_winConditions.WinConditionForLeftColumn(player))
+            return true;
+        if (_winConditions.WinConditionForMiddleColumn(player))
+            return true;
+        if (_winConditions.WinConditionForRightColumn(player))
+            return true;
+        if (_winConditions.WinConditionForTopLeftToBottomRightDiagonal(player))
+            return true;
+        if (_winConditions.WinConditionForTopRightToBottomLeftDiagonal(player))
+            return true;
+        if (_winConditions.DrawCondition())
+        {
+            _gameManager.SetIsDraw(true);
+            return true;
+        }
+            
+
+        return false;
     }
 
     private bool CanGamePieceBePlaced(GamePiece gamePieceOnBoard, GameObject selectedGamePiece)

@@ -34,12 +34,12 @@ public class SpawnManager : MonoBehaviour
     {
         for(int creationIndex = 0; creationIndex < 6; creationIndex++)
         {
-            SpawnGamePiece(_player1piece, _player1SpawnArea, creationIndex, true, "Player1-" + creationIndex);
-            SpawnGamePiece(_player2piece, _player2SpawnArea, creationIndex, false, "Player2-" + creationIndex);
+            SpawnGamePiece(_player1piece, _player1SpawnArea, creationIndex, PlayerEnum.Player1, "Player1-" + creationIndex);
+            SpawnGamePiece(_player2piece, _player2SpawnArea, creationIndex, PlayerEnum.Player2, "Player2-" + creationIndex);
         }
     }
 
-    private void SpawnGamePiece(GameObject gamePiece, GameObject playerSpawnArea, int creationIndex, bool isPlayer1, string id)
+    private void SpawnGamePiece(GameObject gamePiece, GameObject playerSpawnArea, int creationIndex, PlayerEnum player, string id)
     {
         var piece = Instantiate(gamePiece, GetSpawnLocation(creationIndex, playerSpawnArea), Quaternion.identity);
         scaleGamePiece(creationIndex, piece);
@@ -49,7 +49,7 @@ public class SpawnManager : MonoBehaviour
         var gamePieceInfo = piece.GetComponent<GamePiece>();
         
         gamePieceInfo.SetSize(6 - creationIndex);
-        gamePieceInfo.SetIsPlayer1(isPlayer1);
+        gamePieceInfo.SetIsPlayer1(player);
         gamePieceInfo.SetId(id);
     }
 

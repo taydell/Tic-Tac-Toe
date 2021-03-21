@@ -6,7 +6,7 @@ public class GamePiece : MonoBehaviour
 {
     private string _id { get; set; }
     private int _size { get;set; }
-    private bool _isPlayer1 { get; set; }
+    private PlayerEnum _player { get; set; }
     private bool _isInPlay { get; set; } = false;
     GamePieceManager _gamePieceManager;
 
@@ -20,9 +20,9 @@ public class GamePiece : MonoBehaviour
         _size = size;
     }
 
-    public void SetIsPlayer1(bool isPlayer1)
+    public void SetIsPlayer1(PlayerEnum player)
     {
-        _isPlayer1 = isPlayer1;
+        _player = player;
     }
 
     public void SetIsInPlay(bool isInPlay)
@@ -40,9 +40,9 @@ public class GamePiece : MonoBehaviour
         return _size;
     }
 
-    public bool GetIsPlayer1()
+    public PlayerEnum GetPlayer()
     {
-        return _isPlayer1;
+        return _player;
     }
 
     public bool GetIsInPlay()
@@ -62,7 +62,7 @@ public class GamePiece : MonoBehaviour
         {
             Debug.Log("Is In Play: " + _isInPlay);
             Debug.Log("Size: " + _size);
-            Debug.Log("Is Player 1: " + _isPlayer1);
+            Debug.Log("Player: " + GetPlayer());
 
             _gamePieceManager.OutlinePiece(gameObject);
         }

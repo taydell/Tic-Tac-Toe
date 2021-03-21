@@ -5,7 +5,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    static SpawnManager     _spawnManager;
+    static SpawnManager _spawnManager;
+    bool _gameOver = false;
+    bool _isDraw;
+    PlayerEnum _winner;
 
     void Awake()
     {
@@ -26,5 +29,26 @@ public class GameManager : MonoBehaviour
     {
         _spawnManager = GetComponent<SpawnManager>();
         _spawnManager.SpawnGame();
+    }
+
+    public void SetIsDraw(bool isDraw)
+    {
+        _isDraw = isDraw;
+    }
+    public void EndGame(PlayerEnum player)
+    {
+        _gameOver = true;
+        if (!_isDraw)
+        {
+            _winner = player;
+            Debug.Log(player + " wins!");
+            //win logic
+        }
+        else
+        {
+            Debug.Log("Its A Draw!!");
+            //draw logic
+        }
+            
     }
 }
