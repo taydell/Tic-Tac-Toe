@@ -6,7 +6,7 @@ using UnityEngine;
 public class BoardSpaces : MonoBehaviour
 {
     [SerializeField]
-    int x, y;
+    int _row, _column;
 
     BoardManager _boardManager;
     GamePieceManager _gamePieceManager;
@@ -20,7 +20,7 @@ public class BoardSpaces : MonoBehaviour
 
     private void OnMouseOver()
     {
-        _boardManager.OutlineBoardSpaceOnEnter(gameObject);
+        _boardManager.OutlineBoardSpaceOnEnter(gameObject,_row,_column);
     }
     private void OnMouseExit()
     {
@@ -30,5 +30,14 @@ public class BoardSpaces : MonoBehaviour
     private void OnMouseDown()
     {
         _gamePieceManager.MovePiece(gameObject);
+    }
+
+    public int GetBoardSpaceRow()
+    {
+        return _row;
+    }
+    public int GetBoardSpaceColumn()
+    {
+        return _column;
     }
 }

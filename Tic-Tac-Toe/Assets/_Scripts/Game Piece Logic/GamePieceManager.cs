@@ -47,13 +47,21 @@ public class GamePieceManager : MonoBehaviour
         {
             var gamePieceToMove = _selectedPieces[0];
             var boardSpacePosition = boardSpace.transform.position;
+            var boardSpaceRow = boardSpace.GetComponent<BoardSpaces>().GetBoardSpaceRow();
+            var boardSpaceColumn = boardSpace.GetComponent<BoardSpaces>().GetBoardSpaceColumn();
             var gamePiece = gamePieceToMove.GetComponent<GamePiece>();
+            var gamePieceAtSpecificBoardSpace = _boardManager.GetGamePieceAtSpecificBoardSpace(boardSpaceRow, boardSpaceColumn);
 
-            gamePiece.SetIsInPlay(true);
-            gamePieceToMove.transform.position = new Vector3(boardSpacePosition.x, boardSpacePosition.y + .5f, boardSpacePosition.z);
-            OutlinePiece(_selectedPieces[0]);
-            
-            _boardManager.OutlineBoardSpaceOnExit(boardSpace);
+            if (gamePieceAtSpecificBoardSpace == null ||(gamePiece.GetSize() > _boardManager.GetGamePieceAtSpecificBoardSpace(boardSpaceRow, boardSpaceColumn).GetSize()))
+            {
+                gamePiece.SetIsInPlay(true);
+                gamePieceToMove.transform.position = new Vector3(boardSpacePosition.x, boardSpacePosition.y + .5f, boardSpacePosition.z);
+                OutlinePiece(_selectedPieces[0]);
+
+                _boardManager.AddGamePieceToGameBoard(boardSpaceRow, boardSpaceColumn, gamePiece);
+
+                _boardManager.OutlineBoardSpaceOnExit(boardSpace);
+            }
         }
     }
 
