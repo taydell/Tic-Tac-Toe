@@ -10,6 +10,7 @@ public class GamePiece : MonoBehaviour
     private bool _isInPlay { get; set; } = false;
     GameManager _gameManager;
     GamePieceManager _gamePieceManager;
+    PlayerManager _playerManager;
 
     public void SetId(string id)
     {
@@ -55,17 +56,24 @@ public class GamePiece : MonoBehaviour
     {
         _gameManager = GameManager.Instance;
         _gamePieceManager = _gameManager.GetComponent<GamePieceManager>();
+        _playerManager = _gameManager.GetComponent<PlayerManager>();
     }
 
     private void OnMouseDown()
     {
-        if (!_isInPlay && !_gameManager.IsGameOver())
-        {
-            Debug.Log("Is In Play: " + _isInPlay);
-            Debug.Log("Size: " + _size);
-            Debug.Log("Player: " + GetPlayer());
+        var currentPlayer = _playerManager.GetCurrentPlayer();
 
-            _gamePieceManager.OutlinePiece(gameObject);
+        if (_gamePieceManager.CheckIfPieceIsPlayersPiece(gameObject,currentPlayer))
+        {
+            if (!_isInPlay && !_gameManager.IsGameOver())
+                {
+                    Debug.Log("Is In Play: " + _isInPlay);
+                    Debug.Log("Size: " + _size);
+                    Debug.Log("Player: " + GetPlayer());
+
+                    _gamePieceManager.OutlinePiece(gameObject);
+                }
         }
+        
     }
 }

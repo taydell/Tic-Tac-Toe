@@ -7,11 +7,13 @@ public class GamePieceManager : MonoBehaviour
     List<GameObject> _selectedPieces = new List<GameObject>();
     BoardManager _boardManager;
     GameManager _gameManager;
+    PlayerManager _playerManager;
 
     private void Start()
     {
         _gameManager = GameManager.Instance;
         _boardManager = _gameManager.GetComponent<BoardManager>();
+        _playerManager = _gameManager.GetComponent<PlayerManager>();
     }
 
     public void OutlinePiece(GameObject gameObject)
@@ -66,6 +68,7 @@ public class GamePieceManager : MonoBehaviour
                 }
 
                 _boardManager.OutlineBoardSpaceOnExit(boardSpace);
+                _playerManager.ChangeTurns();
             }
         }
     }
@@ -73,5 +76,11 @@ public class GamePieceManager : MonoBehaviour
     public List<GameObject> GetSelectedGamePieces()
     {
         return _selectedPieces;
+    }
+
+    public bool CheckIfPieceIsPlayersPiece(GameObject GamePiece, PlayerEnum currentPlayer)
+    {
+        var gamePiecesPlayer = GamePiece.GetComponent<GamePiece>().GetPlayer();
+        return currentPlayer == gamePiecesPlayer;
     }
 }
