@@ -34,9 +34,12 @@ public class BoardManager : MonoBehaviour
 
     public void OutlineBoardSpaceOnExit(GameObject gameObject)
     {
-        var outline = gameObject.GetComponent<Outline>() != null ? gameObject.GetComponent<Outline>() : gameObject.AddComponent<Outline>();
+        if (_gamePieceManager.GetSelectedGamePieces().Count != 0)
+        {
+            var outline = gameObject.GetComponent<Outline>() != null ? gameObject.GetComponent<Outline>() : gameObject.AddComponent<Outline>();
 
-        outline.OutlineMode = Outline.Mode.OutlineHidden;
+            outline.OutlineMode = Outline.Mode.RemoveAllButGamePieces;
+        }
     }
 
     public void AddGamePieceToGameBoard(int row, int column, GamePiece gamePiece)

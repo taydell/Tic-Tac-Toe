@@ -67,7 +67,9 @@ public class GamePieceManager : MonoBehaviour
                     _gameManager.EndGame(gamePiece.GetPlayer());
                 }
 
-                _boardManager.OutlineBoardSpaceOnExit(boardSpace);
+                var outline = boardSpace.GetComponent<Outline>();
+                outline.OutlineMode = Outline.Mode.RemoveAll;
+
                 _playerManager.ChangeTurns();
             }
         }

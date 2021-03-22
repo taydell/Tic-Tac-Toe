@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2418428992950818058}
   - component: {fileID: -8498342602819166813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 7110839101462139836}
   - component: {fileID: 7665341330078185080}
   - component: {fileID: 2443092363885066812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,6 +112,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -136,6 +137,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &2443092363885066812
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -161,7 +163,7 @@ GameObject:
   - component: {fileID: 2142802026996181434}
   - component: {fileID: 6475422822356358305}
   - component: {fileID: 5971173791397734645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,6 +207,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -229,6 +232,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &5971173791397734645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -255,7 +259,7 @@ GameObject:
   - component: {fileID: 1756354282459328104}
   - component: {fileID: 5653025572352503275}
   - component: {fileID: 8965387901231406848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'TopLeft '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,6 +303,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -323,6 +328,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &5653025572352503275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -363,7 +369,7 @@ GameObject:
   - component: {fileID: 8011056555456923311}
   - component: {fileID: 2733253793692342225}
   - component: {fileID: 489375457361478762}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BottomMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,6 +413,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -431,6 +438,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &2733253793692342225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -471,7 +479,7 @@ GameObject:
   - component: {fileID: 6741411796408067513}
   - component: {fileID: 2367305778093851398}
   - component: {fileID: 2724757212864236305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MiddleRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,6 +523,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -539,6 +548,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &2367305778093851398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -579,7 +589,7 @@ GameObject:
   - component: {fileID: 6036520833010636979}
   - component: {fileID: 8084437773185400693}
   - component: {fileID: 3237941459328492084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TopRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,6 +633,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -647,6 +658,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &8084437773185400693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -687,7 +699,7 @@ GameObject:
   - component: {fileID: 5441625233389600570}
   - component: {fileID: 9032680385188633744}
   - component: {fileID: 8029728852536112609}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BottomLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,6 +743,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -755,6 +768,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &9032680385188633744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -794,7 +808,7 @@ GameObject:
   - component: {fileID: 1536119563593208439}
   - component: {fileID: 9131201623101915291}
   - component: {fileID: 2566495551104740341}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,6 +852,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -862,6 +877,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &2566495551104740341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -888,7 +904,7 @@ GameObject:
   - component: {fileID: 3465979960772267392}
   - component: {fileID: 4525707996335124028}
   - component: {fileID: 4306802890994144412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MiddleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,6 +948,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -956,6 +973,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &4525707996335124028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -996,7 +1014,7 @@ GameObject:
   - component: {fileID: 8630200425153846085}
   - component: {fileID: 322196732175914295}
   - component: {fileID: 6609337317473656580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BottomRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,6 +1058,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1064,6 +1083,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &322196732175914295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1104,7 +1124,7 @@ GameObject:
   - component: {fileID: 8907740700579317472}
   - component: {fileID: 4589496680490650554}
   - component: {fileID: 2620252121490306502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TopMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,6 +1168,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1172,6 +1193,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &4589496680490650554
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1212,7 +1234,7 @@ GameObject:
   - component: {fileID: 5142094212118707822}
   - component: {fileID: 208525276971779191}
   - component: {fileID: 5833400113428659201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MiddleMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1256,6 +1278,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1280,6 +1303,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &208525276971779191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1319,7 +1343,7 @@ GameObject:
   - component: {fileID: 9127333656361770890}
   - component: {fileID: 6186520517412157700}
   - component: {fileID: 2660117764835573083}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1363,6 +1387,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1387,6 +1412,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &2660117764835573083
 BoxCollider:
   m_ObjectHideFlags: 0

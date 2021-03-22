@@ -21,7 +21,9 @@ public class Outline : MonoBehaviour {
     OutlineVisible,
     OutlineHidden,
     OutlineAndSilhouette,
-    SilhouetteOnly
+    SilhouetteOnly,
+    RemoveAll,
+    RemoveAllButGamePieces
   }
 
   public Mode OutlineMode {
@@ -272,6 +274,31 @@ public class Outline : MonoBehaviour {
         outlineFillMaterial.SetFloat("_ZTest", (float)UnityEngine.Rendering.CompareFunction.Greater);
         outlineFillMaterial.SetFloat("_OutlineWidth", 0);
         break;
+      case Mode.RemoveAll:
+        RemoveAllOutineClasses();
+        break;
+      case Mode.RemoveAllButGamePieces:
+        RemoveAllOulinesButGamePieceOutlines();
+        break;
+    }
+  }
+
+  private void RemoveAllOutineClasses()
+  {
+    Outline[] allObjects = FindObjectsOfType<Outline>();
+    foreach (Outline obj in allObjects)
+    {
+        Destroy(obj.GetComponent<Outline>());
+    }
+  } 
+
+  private void RemoveAllOulinesButGamePieceOutlines()
+  {
+    Outline[] allObjects = FindObjectsOfType<Outline>();
+    foreach (Outline obj in allObjects)
+    {
+        if (!obj.CompareTag("GamePiece"))
+            Destroy(obj.GetComponent<Outline>());
     }
   }
 }
