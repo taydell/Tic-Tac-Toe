@@ -42,13 +42,18 @@ public class GameManager : MonoBehaviour
         {
             _winner = player;
             Debug.Log(player + " wins!");
+            
             //win logic
         }
         else
         {
             Debug.Log("Its A Draw!!");
             //draw logic
-        }
-            
+        } 
+    }
+
+    public bool IsGameOver()
+    {
+        return _gameOver;
     }
 }
